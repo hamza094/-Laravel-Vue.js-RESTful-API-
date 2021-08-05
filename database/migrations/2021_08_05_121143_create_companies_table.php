@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('name');
+            $table->string('url')->nullable();
             $table->string('location');
             $table->string('type');
             $table->string('rg_no');

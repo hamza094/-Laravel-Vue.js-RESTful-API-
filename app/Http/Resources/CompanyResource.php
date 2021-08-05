@@ -18,8 +18,13 @@ class CompanyResource extends JsonResource
     {
         return [
            'name'=>$this->name,
- 
+           'url'=>$this->url,
+           'location'=>$this->location,
+           'type'=>$this->type,
+           'reg_no'=>$this->reg_no,
+           'about'=>Str::of($this->about)->limit(75),
            'created_at'=>$this->created_at->diffForHumans()
+
         ];
     }
 }

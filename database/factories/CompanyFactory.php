@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProjectFactory extends Factory
+class CompanyFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -23,7 +23,12 @@ class ProjectFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'about' => $this->faker->sentence('20'),
+            'about' => $this->faker->sentence('40'),
+            'user_id'=>1,
+            'location'=>'Kentuky',
+            'type'=>'Busniess',
+            'rg_no'=>'421004',
+            'url'=>'https://mocah.org/thumbs/341907-Lancer-Rogue-Company-Video-Game.jpg'
         ];
     }
 }

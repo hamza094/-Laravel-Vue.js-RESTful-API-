@@ -42,10 +42,6 @@ class Handler extends ExceptionHandler
             //
         });
 
-        $this->renderable(function (NotFoundHttpException $e, $request) {
-            return response()->json([
-                'message' => 'Record for model not found.'
-            ], 404);
-    });
+    
     }
 }
