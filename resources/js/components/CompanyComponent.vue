@@ -1,6 +1,64 @@
 <template>
 <div>
-<div class="row">
+
+<div>
+    
+    <ul class="nav nav-tabs mb-5" id="myTab" role="tablist">
+
+  <li class="nav-item" role="presentation">
+
+    <a class="nav-link active" id="deal-tab" data-toggle="tab" href="#deal" role="tab" aria-controls="home" aria-selected="true">Deal Showcase</a>
+
+  </li>
+  <li class="nav-item" role="presentation">
+
+    <a class="nav-link" id="screen-tab" data-toggle="tab" href="#screen" role="tab" aria-controls="profile" aria-selected="false">Screening Room</a>
+
+  </li>
+
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="deal" role="tabpanel" aria-labelledby="deal-tab">
+
+<div class="row filter">
+    
+
+      <div class="col-md-2 filter-card">
+        <p class="filter-title">Unscreened</p>
+        <p class="filter deal">113 Deals</p>
+        <button class="btn btn-primary btn-sm">View</button>
+    </div>
+
+      <div class="col-md-2 filter-card">
+        <p class="filter-title">Unscreened</p>
+        <p class="filter deal">113 Deals</p>
+        <button class="btn btn-primary btn-sm">View</button>
+    </div>
+
+      <div class="col-md-2 filter-card">
+        <p class="filter-title">Unscreened</p>
+        <p class="filter deal">113 Deals</p>
+        <button class="btn btn-primary btn-sm">View</button>
+    </div>
+
+      <div class="col-md-2 filter-card">
+        <p class="filter-title">Unscreened</p>
+        <p class="filter deal">113 Deals</p>
+        <button class="btn btn-primary btn-sm">View</button>
+    </div>
+
+
+  <div class="col-md-2 filter-card">
+        <p class="filter-title">Unscreened</p>
+        <p class="filter deal">113 Deals</p>
+        <button class="btn btn-primary btn-sm">View</button>
+    </div>
+
+
+</div>
+
+
+  <div class="row">
 
 <div class="col-md-4 mb-4" v-for="company in companies.data">
         <div class="card">
@@ -21,6 +79,14 @@
         <pagination align="center" :data="companies" @pagination-change-page="loadCompanies"></pagination>
     </div>
 
+  </div>
+
+  <div class="tab-pane fade" id="screen" role="tabpanel" aria-labelledby="screen-tab">
+  <h2 class="text-center mt-5">Sorry! No Content Available For Screening Room</h2>
+</div>
+
+</div>
+</div>    
 </div>
 </template>
 

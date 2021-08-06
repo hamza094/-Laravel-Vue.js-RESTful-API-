@@ -1871,6 +1871,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -38042,62 +38108,214 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "row" },
-      _vm._l(_vm.companies.data, function(company) {
-        return _c("div", { staticClass: "col-md-4 mb-4" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("img", {
-              staticClass: "card-img-top",
-              attrs: { src: company.url, alt: "Card image cap" }
-            }),
+    _c("div", [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-content", attrs: { id: "myTabContent" } }, [
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane fade show active",
+            attrs: {
+              id: "deal",
+              role: "tabpanel",
+              "aria-labelledby": "deal-tab"
+            }
+          },
+          [
+            _vm._m(1),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "mb-4" }, [
-                _c("span", { staticClass: "float-left" }, [
-                  _vm._v(_vm._s(company.location))
-                ]),
-                _vm._v(" "),
-                _c("span", { staticClass: "float-right" }, [_vm._v("Edit")])
-              ]),
-              _vm._v(" "),
-              _c("h5", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(company.name))
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(_vm._s(company.about))
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-primary btn-block",
-                  attrs: { href: "" }
-                },
-                [_vm._v("View Profile")]
-              )
-            ])
-          ])
-        ])
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _c("pagination", {
-          attrs: { align: "center", data: _vm.companies },
-          on: { "pagination-change-page": _vm.loadCompanies }
-        })
-      ],
-      1
-    )
+            _c(
+              "div",
+              { staticClass: "row" },
+              _vm._l(_vm.companies.data, function(company) {
+                return _c("div", { staticClass: "col-md-4 mb-4" }, [
+                  _c("div", { staticClass: "card" }, [
+                    _c("img", {
+                      staticClass: "card-img-top",
+                      attrs: { src: company.url, alt: "Card image cap" }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "mb-4" }, [
+                        _c("span", { staticClass: "float-left" }, [
+                          _vm._v(_vm._s(company.location))
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "float-right" }, [
+                          _vm._v("Edit")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(company.name))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(_vm._s(company.about))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-primary btn-block",
+                          attrs: { href: "" }
+                        },
+                        [_vm._v("View Profile")]
+                      )
+                    ])
+                  ])
+                ])
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c("pagination", {
+                  attrs: { align: "center", data: _vm.companies },
+                  on: { "pagination-change-page": _vm.loadCompanies }
+                })
+              ],
+              1
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _vm._m(2)
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "nav nav-tabs mb-5",
+        attrs: { id: "myTab", role: "tablist" }
+      },
+      [
+        _c("li", { staticClass: "nav-item", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              attrs: {
+                id: "deal-tab",
+                "data-toggle": "tab",
+                href: "#deal",
+                role: "tab",
+                "aria-controls": "home",
+                "aria-selected": "true"
+              }
+            },
+            [_vm._v("Deal Showcase")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item", attrs: { role: "presentation" } }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: {
+                id: "screen-tab",
+                "data-toggle": "tab",
+                href: "#screen",
+                role: "tab",
+                "aria-controls": "profile",
+                "aria-selected": "false"
+              }
+            },
+            [_vm._v("Screening Room")]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row filter" }, [
+      _c("div", { staticClass: "col-md-2 filter-card" }, [
+        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+          _vm._v("View")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-2 filter-card" }, [
+        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+          _vm._v("View")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-2 filter-card" }, [
+        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+          _vm._v("View")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-2 filter-card" }, [
+        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+          _vm._v("View")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-2 filter-card" }, [
+        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+          _vm._v("View")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "tab-pane fade",
+        attrs: {
+          id: "screen",
+          role: "tabpanel",
+          "aria-labelledby": "screen-tab"
+        }
+      },
+      [
+        _c("h2", { staticClass: "text-center mt-5" }, [
+          _vm._v("Sorry! No Content Available For Screening Room")
+        ])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 

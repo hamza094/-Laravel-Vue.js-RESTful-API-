@@ -1,5 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+/* Bootstrap tab designing */
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: #428eda !important;
+  /*background-color: #f8fafc;*/
+  border-color: transparent !important;
+  border-bottom: 1px solid #428eda !important;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: transparent !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  color: #428eda !important;
+  /*background-color: #f8fafc;*/
+  border-color: transparent !important;
+  border-bottom: 1px solid #428eda !important;
+}
+
+.nav-link {
+  color: grey !important;
+}
+
+.filter {
+  margin-bottom: 1.5rem;
+}
+.filter-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.filter-card {
+  background-color: #FFFFFF;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
+  border-top: 3px solid pink;
+}
+.filter-card:not(:last-child) {
+  margin-right: 1rem;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

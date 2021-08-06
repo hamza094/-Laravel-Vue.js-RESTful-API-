@@ -1,0 +1,45 @@
+ /* Bootstrap tab designing */
+ .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #428eda !important;
+     /*background-color: #f8fafc;*/ 
+     border-color: transparent !important; 
+    border-bottom: 1px solid #428eda !important;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+     border-color: transparent  !important; 
+     border-bottom: 1px solid #dee2e6 !important;
+}
+
+
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    color: #428eda !important;
+     /*background-color: #f8fafc;*/ 
+     border-color: transparent !important; 
+    border-bottom: 1px solid #428eda !important;
+}
+
+.nav-link{
+	color:grey !important;
+}
+
+
+//filters
+
+.filter{
+	margin-bottom: 1.5rem;
+	&-title{
+		font-size:1rem;
+		font-weight: bold;
+	}
+	&-card{
+     background-color: #FFFFFF;
+     padding: .7rem;
+     border-radius: .3rem;
+     border-top:3px solid pink;
+     &:not(:last-child){
+     	margin-right: 1rem;
+     };
+	}
+	}
