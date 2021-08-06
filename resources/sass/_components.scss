@@ -43,3 +43,42 @@
      };
 	}
 	}
+
+/* Modal */
+.companymodal{
+	padding: 1.2rem;
+}
+
+.modal-heading{
+	&_edit{
+      font-size:1.2rem;
+      font-color: grey;
+      padding-right: .5rem;
+      border-right: 3px solid #dee2e6;
+	}
+	&_name{
+		font-size:1rem;
+      padding-right: .4rem;
+      padding-left: .4rem;
+      border-right: 3px solid #dee2e6;
+	}
+	&_listening{
+		font-size:1rem;
+        padding-left: .4rem;
+	}
+}
+
+/* Investment */
+.investment{
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+.formModal-btn{
+	text-align: center;
+
+	.btn{
+		width: 14rem;
+		font-size:1.2rem;
+	}
+}

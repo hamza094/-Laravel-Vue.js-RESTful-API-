@@ -41,6 +41,42 @@
   margin-right: 1rem;
 }
 
+/* Modal */
+.companymodal {
+  padding: 1.2rem;
+}
+
+.modal-heading_edit {
+  font-size: 1.2rem;
+  font-color: grey;
+  padding-right: 0.5rem;
+  border-right: 3px solid #dee2e6;
+}
+.modal-heading_name {
+  font-size: 1rem;
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+  border-right: 3px solid #dee2e6;
+}
+.modal-heading_listening {
+  font-size: 1rem;
+  padding-left: 0.4rem;
+}
+
+/* Investment */
+.investment {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.formModal-btn {
+  text-align: center;
+}
+.formModal-btn .btn {
+  width: 14rem;
+  font-size: 1.2rem;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
