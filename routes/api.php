@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CompanyController;
+use App\Http\Controllers\Api\FilterController;
+
 
 
 /*
@@ -21,6 +23,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiresource('/companies',CompanyController::class);
+
+Route::get('/filters',[FilterController::class,'index']);
 
 Route::fallback(function(){
     return response()->json([

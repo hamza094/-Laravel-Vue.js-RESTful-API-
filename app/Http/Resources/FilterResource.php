@@ -16,6 +16,7 @@ class FilterResource extends JsonResource
     {
         return [
           'id'=>$this->id,
+          'color'=>$this->color,
            'name'=>$this->name,
            'deal_count'=>$this->deal_count
         ];

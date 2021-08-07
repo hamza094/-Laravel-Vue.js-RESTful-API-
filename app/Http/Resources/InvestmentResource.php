@@ -18,7 +18,8 @@ class InvestmentResource extends JsonResource
           'id'=>$this->id,
           'currency'=>$this->currency,
           'amount'=>$this->amount,
-          'shares'=>$this->shares
+          'shares'=>$this->shares,
+          'color'=>$this->color
         ];
     }
 }

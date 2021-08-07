@@ -23,37 +23,12 @@
 <div class="row filter">
     
 
-      <div class="col-md-2 filter-card">
-        <p class="filter-title">Unscreened</p>
-        <p class="filter deal">113 Deals</p>
+      <div class="col-md-2 filter-card" v-for="filter in filters" :style="{'border-top': '3px solid  pink'}">
+        <div>hy</div>
+        <p class="filter-title">{{filter.name}}</p>
+        <p class="filter deal">{{filter.deal_count}} Deals</p>
         <button class="btn btn-primary btn-sm">View</button>
     </div>
-
-      <div class="col-md-2 filter-card">
-        <p class="filter-title">Unscreened</p>
-        <p class="filter deal">113 Deals</p>
-        <button class="btn btn-primary btn-sm">View</button>
-    </div>
-
-      <div class="col-md-2 filter-card">
-        <p class="filter-title">Unscreened</p>
-        <p class="filter deal">113 Deals</p>
-        <button class="btn btn-primary btn-sm">View</button>
-    </div>
-
-      <div class="col-md-2 filter-card">
-        <p class="filter-title">Unscreened</p>
-        <p class="filter deal">113 Deals</p>
-        <button class="btn btn-primary btn-sm">View</button>
-    </div>
-
-
-  <div class="col-md-2 filter-card">
-        <p class="filter-title">Unscreened</p>
-        <p class="filter deal">113 Deals</p>
-        <button class="btn btn-primary btn-sm">View</button>
-    </div>
-
 
 </div>
 
@@ -163,18 +138,18 @@
                            <textarea class="form-control" id="addnote" rows="4"></textarea>
                           </div>
 
-                          <div class="investment">
-                              <h6>Investment#2246</h6>
+                          <div class="investment" v-for='investment in company.investments'>
+                              <h6>Investment#{{investment.id}}</h6>
                                  <div class="form-row">
                                        <div class="form-group col-md-3">
                             <label for="amount" class="label-name">Amount</label>
-                            <input type="text" id="amount" class="form-control" name="amount" v-model="form.amount" required>
+                            <input type="text" id="amount" class="form-control" name="amount" v-model="investment.amount" required>
                             </div>
 
                             <div class="form-group col-md-3">
                             <label for="currency" class="label-name">Currency</label>
                             <select class="form-control" name="currency" v-model="form.currency">
-                              <option selected="selected">US Dollar</option>
+                              <option selected="selected">{{investment.currency}}</option>
                               <option>UK Pound</option>
                               <option>Saudi Riyal</option>
                               <option>Canadian Sterling</option>
@@ -183,7 +158,7 @@
 
                              <div class="form-group col-md-3">
                             <label for="shares" class="label-name">Shares</label>
-                            <input type="text" id="shares" class="form-control" name="shares" v-model="form.shares" required>
+                            <input type="text" id="shares" class="form-control" name="shares" v-model="investment.shares" required>
                             </div>
 
                             <div class="form-group col-md-3">
@@ -249,6 +224,7 @@ export default{
     data(){
     return{
       companies:{},
+      filters:{},
 
       form:{
          name:'',
@@ -267,6 +243,15 @@ export default{
                         console.log(error);
                     });
             },
+      loadFilters(){
+         axios.get('/api/filters').
+               then((response)=>{
+                    this.filters =response.data.data;
+               })
+                .catch(function(error){
+                    console.log(error);
+                });
+      },      
       editModal(id,company){
         this.$modal.show("companyModal"+id);
       },
@@ -276,6 +261,7 @@ export default{
     },
     created(){
         this.loadCompanies();
+        this.loadFilters();
     }
 
 }

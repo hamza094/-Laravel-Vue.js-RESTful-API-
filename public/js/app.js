@@ -2064,35 +2064,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       companies: {},
+      filters: {},
       form: {
         name: '',
         rts: 'Funded'
@@ -2110,6 +2086,15 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     },
+    loadFilters: function loadFilters() {
+      var _this2 = this;
+
+      axios.get('/api/filters').then(function (response) {
+        _this2.filters = response.data.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     editModal: function editModal(id, company) {
       this.$modal.show("companyModal" + id);
     },
@@ -2119,6 +2104,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.loadCompanies();
+    this.loadFilters();
   }
 });
 
@@ -38302,7 +38288,35 @@ var render = function() {
             }
           },
           [
-            _vm._m(1),
+            _c(
+              "div",
+              { staticClass: "row filter" },
+              _vm._l(_vm.filters, function(filter) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "col-md-2 filter-card",
+                    style: { "border-top": "3px solid  pink" }
+                  },
+                  [
+                    _c("div", [_vm._v("hy")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "filter-title" }, [
+                      _vm._v(_vm._s(filter.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "filter deal" }, [
+                      _vm._v(_vm._s(filter.deal_count) + " Deals")
+                    ]),
+                    _vm._v(" "),
+                    _c("button", { staticClass: "btn btn-primary btn-sm" }, [
+                      _vm._v("View")
+                    ])
+                  ]
+                )
+              }),
+              0
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -38421,575 +38435,102 @@ var render = function() {
                             _vm._v(" "),
                             _c("hr"),
                             _vm._v(" "),
-                            _c("form", [
-                              _c("div", { staticClass: "form-row" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-6" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "name" }
-                                      },
-                                      [_vm._v("Company(Legal Name)")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
+                            _c(
+                              "form",
+                              [
+                                _c("div", { staticClass: "form-row" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "form-group col-md-6" },
+                                    [
+                                      _c(
+                                        "label",
                                         {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: company.legal,
-                                          expression: "company.legal"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        id: "name",
-                                        name: "name",
-                                        required: ""
-                                      },
-                                      domProps: { value: company.legal },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            company,
-                                            "legal",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-6" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "name" }
-                                      },
-                                      [_vm._v("Company(Friendly Name)")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: company.name,
-                                          expression: "company.name"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        id: "name",
-                                        name: "name",
-                                        required: ""
-                                      },
-                                      domProps: { value: company.name },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            company,
-                                            "name",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "founded" }
-                                      },
-                                      [_vm._v("Founded")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: company.created_at,
-                                          expression: "company.created_at"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        id: "founded",
-                                        name: "founded",
-                                        required: ""
-                                      },
-                                      domProps: { value: company.created_at },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            company,
-                                            "created_at",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "juri" }
-                                      },
-                                      [_vm._v("Jurisdiction")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
+                                          staticClass: "label-name",
+                                          attrs: { for: "name" }
+                                        },
+                                        [_vm._v("Company(Legal Name)")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
                                         directives: [
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.juri,
-                                            expression: "form.juri"
+                                            value: company.legal,
+                                            expression: "company.legal"
                                           }
                                         ],
                                         staticClass: "form-control",
-                                        attrs: { name: "juri" },
+                                        attrs: {
+                                          type: "text",
+                                          id: "name",
+                                          name: "name",
+                                          required: ""
+                                        },
+                                        domProps: { value: company.legal },
                                         on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
                                             _vm.$set(
-                                              _vm.form,
-                                              "juri",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
+                                              company,
+                                              "legal",
+                                              $event.target.value
                                             )
                                           }
                                         }
-                                      },
-                                      [
-                                        _c(
-                                          "option",
-                                          { attrs: { selected: "selected" } },
-                                          [_vm._v("North Carolina (Us)")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("option", [
-                                          _vm._v("Washington (Us)")
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("option", [_vm._v("Michigan (Us)")]),
-                                        _vm._v(" "),
-                                        _c("option", [
-                                          _vm._v("California (Us)")
-                                        ])
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "cr" }
-                                      },
-                                      [_vm._v("Company Registaror")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
+                                      })
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "form-group col-md-6" },
+                                    [
+                                      _c(
+                                        "label",
+                                        {
+                                          staticClass: "label-name",
+                                          attrs: { for: "name" }
+                                        },
+                                        [_vm._v("Company(Friendly Name)")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("input", {
                                         directives: [
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.cr,
-                                            expression: "form.cr"
+                                            value: company.name,
+                                            expression: "company.name"
                                           }
                                         ],
                                         staticClass: "form-control",
-                                        attrs: { name: "cr" },
+                                        attrs: {
+                                          type: "text",
+                                          id: "name",
+                                          name: "name",
+                                          required: ""
+                                        },
+                                        domProps: { value: company.name },
                                         on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
                                             _vm.$set(
-                                              _vm.form,
-                                              "cr",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
+                                              company,
+                                              "name",
+                                              $event.target.value
                                             )
                                           }
                                         }
-                                      },
-                                      [
-                                        _c(
-                                          "option",
-                                          { attrs: { selected: "selected" } },
-                                          [
-                                            _vm._v(
-                                              "US (US-Secatory of State Of)"
-                                            )
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("option", [
-                                          _vm._v(
-                                            "Finland (Fin-Secatory of State Of)"
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("option", [
-                                          _vm._v(
-                                            "UK (UK-Secatory of State Of))"
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("option", [
-                                          _vm._v(
-                                            "Sweden (Swe-Secatory of State Of)"
-                                          )
-                                        ])
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "reg" }
-                                      },
-                                      [_vm._v("Registration No.")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: company.reg_no,
-                                          expression: "company.reg_no"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        id: "reg",
-                                        name: "reg",
-                                        required: ""
-                                      },
-                                      domProps: { value: company.reg_no },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            company,
-                                            "reg_no",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-row" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "bt" }
-                                      },
-                                      [_vm._v("Business Type")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: company.type,
-                                          expression: "company.type"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "bt",
-                                        id: "name",
-                                        name: "bt",
-                                        required: ""
-                                      },
-                                      domProps: { value: company.type },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            company,
-                                            "type",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "name" }
-                                      },
-                                      [_vm._v("Relationship Manager")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: company.name,
-                                          expression: "company.name"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        id: "name",
-                                        name: "name",
-                                        required: ""
-                                      },
-                                      domProps: { value: company.name },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            company,
-                                            "name",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "df" }
-                                      },
-                                      [_vm._v("Dealflow Status")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "select",
-                                      {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.df,
-                                            expression: "form.df"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: { name: "df" },
-                                        on: {
-                                          change: function($event) {
-                                            var $$selectedVal = Array.prototype.filter
-                                              .call(
-                                                $event.target.options,
-                                                function(o) {
-                                                  return o.selected
-                                                }
-                                              )
-                                              .map(function(o) {
-                                                var val =
-                                                  "_value" in o
-                                                    ? o._value
-                                                    : o.value
-                                                return val
-                                              })
-                                            _vm.$set(
-                                              _vm.form,
-                                              "df",
-                                              $event.target.multiple
-                                                ? $$selectedVal
-                                                : $$selectedVal[0]
-                                            )
-                                          }
-                                        }
-                                      },
-                                      [
-                                        _c(
-                                          "option",
-                                          { attrs: { selected: "selected" } },
-                                          [_vm._v("Portfolio")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("option", [_vm._v("Website")]),
-                                        _vm._v(" "),
-                                        _c("option", [_vm._v("Status")]),
-                                        _vm._v(" "),
-                                        _c("option", [_vm._v("Analogue")])
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "form-group col-md-3" },
-                                  [
-                                    _c(
-                                      "label",
-                                      {
-                                        staticClass: "label-name",
-                                        attrs: { for: "rts" }
-                                      },
-                                      [_vm._v("Reporting Status")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("input", {
-                                      directives: [
-                                        {
-                                          name: "model",
-                                          rawName: "v-model",
-                                          value: _vm.form.rts,
-                                          expression: "form.rts"
-                                        }
-                                      ],
-                                      staticClass: "form-control",
-                                      attrs: {
-                                        type: "text",
-                                        id: "name",
-                                        name: "rts",
-                                        required: ""
-                                      },
-                                      domProps: { value: _vm.form.rts },
-                                      on: {
-                                        input: function($event) {
-                                          if ($event.target.composing) {
-                                            return
-                                          }
-                                          _vm.$set(
-                                            _vm.form,
-                                            "rts",
-                                            $event.target.value
-                                          )
-                                        }
-                                      }
-                                    })
-                                  ]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "form-group" }, [
-                                _c("label", { attrs: { for: "note" } }, [
-                                  _vm._v("Add Note")
+                                      })
+                                    ]
+                                  )
                                 ]),
-                                _vm._v(" "),
-                                _c("textarea", {
-                                  staticClass: "form-control",
-                                  attrs: { id: "addnote", rows: "4" }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "investment" }, [
-                                _c("h6", [_vm._v("Investment#2246")]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "form-row" }, [
                                   _c(
@@ -39000,9 +38541,9 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "amount" }
+                                          attrs: { for: "founded" }
                                         },
-                                        [_vm._v("Amount")]
+                                        [_vm._v("Founded")]
                                       ),
                                       _vm._v(" "),
                                       _c("input", {
@@ -39010,26 +38551,26 @@ var render = function() {
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.amount,
-                                            expression: "form.amount"
+                                            value: company.created_at,
+                                            expression: "company.created_at"
                                           }
                                         ],
                                         staticClass: "form-control",
                                         attrs: {
                                           type: "text",
-                                          id: "amount",
-                                          name: "amount",
+                                          id: "founded",
+                                          name: "founded",
                                           required: ""
                                         },
-                                        domProps: { value: _vm.form.amount },
+                                        domProps: { value: company.created_at },
                                         on: {
                                           input: function($event) {
                                             if ($event.target.composing) {
                                               return
                                             }
                                             _vm.$set(
-                                              _vm.form,
-                                              "amount",
+                                              company,
+                                              "created_at",
                                               $event.target.value
                                             )
                                           }
@@ -39046,9 +38587,9 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "currency" }
+                                          attrs: { for: "juri" }
                                         },
-                                        [_vm._v("Currency")]
+                                        [_vm._v("Jurisdiction")]
                                       ),
                                       _vm._v(" "),
                                       _c(
@@ -39058,12 +38599,12 @@ var render = function() {
                                             {
                                               name: "model",
                                               rawName: "v-model",
-                                              value: _vm.form.currency,
-                                              expression: "form.currency"
+                                              value: _vm.form.juri,
+                                              expression: "form.juri"
                                             }
                                           ],
                                           staticClass: "form-control",
-                                          attrs: { name: "currency" },
+                                          attrs: { name: "juri" },
                                           on: {
                                             change: function($event) {
                                               var $$selectedVal = Array.prototype.filter
@@ -39082,7 +38623,7 @@ var render = function() {
                                                 })
                                               _vm.$set(
                                                 _vm.form,
-                                                "currency",
+                                                "juri",
                                                 $event.target.multiple
                                                   ? $$selectedVal
                                                   : $$selectedVal[0]
@@ -39094,15 +38635,19 @@ var render = function() {
                                           _c(
                                             "option",
                                             { attrs: { selected: "selected" } },
-                                            [_vm._v("US Dollar")]
+                                            [_vm._v("North Carolina (Us)")]
                                           ),
                                           _vm._v(" "),
-                                          _c("option", [_vm._v("UK Pound")]),
-                                          _vm._v(" "),
-                                          _c("option", [_vm._v("Saudi Riyal")]),
+                                          _c("option", [
+                                            _vm._v("Washington (Us)")
+                                          ]),
                                           _vm._v(" "),
                                           _c("option", [
-                                            _vm._v("Canadian Sterling")
+                                            _vm._v("Michigan (Us)")
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("option", [
+                                            _vm._v("California (Us)")
                                           ])
                                         ]
                                       )
@@ -39117,41 +38662,80 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "shares" }
+                                          attrs: { for: "cr" }
                                         },
-                                        [_vm._v("Shares")]
+                                        [_vm._v("Company Registaror")]
                                       ),
                                       _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.shares,
-                                            expression: "form.shares"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          id: "shares",
-                                          name: "shares",
-                                          required: ""
-                                        },
-                                        domProps: { value: _vm.form.shares },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                      _c(
+                                        "select",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.cr,
+                                              expression: "form.cr"
                                             }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "shares",
-                                              $event.target.value
-                                            )
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: { name: "cr" },
+                                          on: {
+                                            change: function($event) {
+                                              var $$selectedVal = Array.prototype.filter
+                                                .call(
+                                                  $event.target.options,
+                                                  function(o) {
+                                                    return o.selected
+                                                  }
+                                                )
+                                                .map(function(o) {
+                                                  var val =
+                                                    "_value" in o
+                                                      ? o._value
+                                                      : o.value
+                                                  return val
+                                                })
+                                              _vm.$set(
+                                                _vm.form,
+                                                "cr",
+                                                $event.target.multiple
+                                                  ? $$selectedVal
+                                                  : $$selectedVal[0]
+                                              )
+                                            }
                                           }
-                                        }
-                                      })
+                                        },
+                                        [
+                                          _c(
+                                            "option",
+                                            { attrs: { selected: "selected" } },
+                                            [
+                                              _vm._v(
+                                                "US (US-Secatory of State Of)"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("option", [
+                                            _vm._v(
+                                              "Finland (Fin-Secatory of State Of)"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("option", [
+                                            _vm._v(
+                                              "UK (UK-Secatory of State Of))"
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("option", [
+                                            _vm._v(
+                                              "Sweden (Swe-Secatory of State Of)"
+                                            )
+                                          ])
+                                        ]
+                                      )
                                     ]
                                   ),
                                   _vm._v(" "),
@@ -39163,9 +38747,9 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "dlty" }
+                                          attrs: { for: "reg" }
                                         },
-                                        [_vm._v("Deal Type")]
+                                        [_vm._v("Registration No.")]
                                       ),
                                       _vm._v(" "),
                                       _c("input", {
@@ -39173,26 +38757,26 @@ var render = function() {
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.dlty,
-                                            expression: "form.dlty"
+                                            value: company.reg_no,
+                                            expression: "company.reg_no"
                                           }
                                         ],
                                         staticClass: "form-control",
                                         attrs: {
                                           type: "text",
-                                          id: "dlty",
-                                          name: "dlty",
+                                          id: "reg",
+                                          name: "reg",
                                           required: ""
                                         },
-                                        domProps: { value: _vm.form.dlty },
+                                        domProps: { value: company.reg_no },
                                         on: {
                                           input: function($event) {
                                             if ($event.target.composing) {
                                               return
                                             }
                                             _vm.$set(
-                                              _vm.form,
-                                              "dlty",
+                                              company,
+                                              "reg_no",
                                               $event.target.value
                                             )
                                           }
@@ -39211,9 +38795,9 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "fuadcr" }
+                                          attrs: { for: "bt" }
                                         },
-                                        [_vm._v("Fund Admin Created")]
+                                        [_vm._v("Business Type")]
                                       ),
                                       _vm._v(" "),
                                       _c("input", {
@@ -39221,26 +38805,26 @@ var render = function() {
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.fuadcr,
-                                            expression: "form.fuadcr"
+                                            value: company.type,
+                                            expression: "company.type"
                                           }
                                         ],
                                         staticClass: "form-control",
                                         attrs: {
-                                          type: "text",
-                                          id: "fuadcr",
-                                          name: "fuadcr",
+                                          type: "bt",
+                                          id: "name",
+                                          name: "bt",
                                           required: ""
                                         },
-                                        domProps: { value: _vm.form.fuadcr },
+                                        domProps: { value: company.type },
                                         on: {
                                           input: function($event) {
                                             if ($event.target.composing) {
                                               return
                                             }
                                             _vm.$set(
-                                              _vm.form,
-                                              "fuadcr",
+                                              company,
+                                              "type",
                                               $event.target.value
                                             )
                                           }
@@ -39257,9 +38841,9 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "traini" }
+                                          attrs: { for: "name" }
                                         },
-                                        [_vm._v("Transfer Initiated")]
+                                        [_vm._v("Relationship Manager")]
                                       ),
                                       _vm._v(" "),
                                       _c("input", {
@@ -39267,26 +38851,26 @@ var render = function() {
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.traini,
-                                            expression: "form.traini"
+                                            value: company.name,
+                                            expression: "company.name"
                                           }
                                         ],
                                         staticClass: "form-control",
                                         attrs: {
                                           type: "text",
-                                          id: "traini",
-                                          name: "traini",
+                                          id: "name",
+                                          name: "name",
                                           required: ""
                                         },
-                                        domProps: { value: _vm.form.traini },
+                                        domProps: { value: company.name },
                                         on: {
                                           input: function($event) {
                                             if ($event.target.composing) {
                                               return
                                             }
                                             _vm.$set(
-                                              _vm.form,
-                                              "traini",
+                                              company,
+                                              "name",
                                               $event.target.value
                                             )
                                           }
@@ -39303,41 +38887,64 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "tracre" }
+                                          attrs: { for: "df" }
                                         },
-                                        [_vm._v("Transfer Created")]
+                                        [_vm._v("Dealflow Status")]
                                       ),
                                       _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.form.tracre,
-                                            expression: "form.tracre"
-                                          }
-                                        ],
-                                        staticClass: "form-control",
-                                        attrs: {
-                                          type: "text",
-                                          id: "tra-cre",
-                                          name: "tracre",
-                                          required: ""
-                                        },
-                                        domProps: { value: _vm.form.tracre },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
+                                      _c(
+                                        "select",
+                                        {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.form.df,
+                                              expression: "form.df"
                                             }
-                                            _vm.$set(
-                                              _vm.form,
-                                              "tracre",
-                                              $event.target.value
-                                            )
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: { name: "df" },
+                                          on: {
+                                            change: function($event) {
+                                              var $$selectedVal = Array.prototype.filter
+                                                .call(
+                                                  $event.target.options,
+                                                  function(o) {
+                                                    return o.selected
+                                                  }
+                                                )
+                                                .map(function(o) {
+                                                  var val =
+                                                    "_value" in o
+                                                      ? o._value
+                                                      : o.value
+                                                  return val
+                                                })
+                                              _vm.$set(
+                                                _vm.form,
+                                                "df",
+                                                $event.target.multiple
+                                                  ? $$selectedVal
+                                                  : $$selectedVal[0]
+                                              )
+                                            }
                                           }
-                                        }
-                                      })
+                                        },
+                                        [
+                                          _c(
+                                            "option",
+                                            { attrs: { selected: "selected" } },
+                                            [_vm._v("Portfolio")]
+                                          ),
+                                          _vm._v(" "),
+                                          _c("option", [_vm._v("Website")]),
+                                          _vm._v(" "),
+                                          _c("option", [_vm._v("Status")]),
+                                          _vm._v(" "),
+                                          _c("option", [_vm._v("Analogue")])
+                                        ]
+                                      )
                                     ]
                                   ),
                                   _vm._v(" "),
@@ -39349,9 +38956,9 @@ var render = function() {
                                         "label",
                                         {
                                           staticClass: "label-name",
-                                          attrs: { for: "bnkref" }
+                                          attrs: { for: "rts" }
                                         },
-                                        [_vm._v("Bank Refrence")]
+                                        [_vm._v("Reporting Status")]
                                       ),
                                       _vm._v(" "),
                                       _c("input", {
@@ -39359,18 +38966,18 @@ var render = function() {
                                           {
                                             name: "model",
                                             rawName: "v-model",
-                                            value: _vm.form.bnkref,
-                                            expression: "form.bnkref"
+                                            value: _vm.form.rts,
+                                            expression: "form.rts"
                                           }
                                         ],
                                         staticClass: "form-control",
                                         attrs: {
                                           type: "text",
-                                          id: "bnk-ref",
-                                          name: "bnkref",
+                                          id: "name",
+                                          name: "rts",
                                           required: ""
                                         },
-                                        domProps: { value: _vm.form.bnkref },
+                                        domProps: { value: _vm.form.rts },
                                         on: {
                                           input: function($event) {
                                             if ($event.target.composing) {
@@ -39378,7 +38985,7 @@ var render = function() {
                                             }
                                             _vm.$set(
                                               _vm.form,
-                                              "bnkref",
+                                              "rts",
                                               $event.target.value
                                             )
                                           }
@@ -39389,25 +38996,502 @@ var render = function() {
                                 ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "form-group" }, [
-                                  _c("label", { attrs: { for: "Int-note" } }, [
-                                    _vm._v("Investment Note(Not Required)")
+                                  _c("label", { attrs: { for: "note" } }, [
+                                    _vm._v("Add Note")
                                   ]),
                                   _vm._v(" "),
                                   _c("textarea", {
                                     staticClass: "form-control",
-                                    attrs: { id: "Int-note", rows: "2" }
+                                    attrs: { id: "addnote", rows: "4" }
                                   })
+                                ]),
+                                _vm._v(" "),
+                                _vm._l(company.investments, function(
+                                  investment
+                                ) {
+                                  return _c(
+                                    "div",
+                                    { staticClass: "investment" },
+                                    [
+                                      _c("h6", [
+                                        _vm._v(
+                                          "Investment#" + _vm._s(investment.id)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-row" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "amount" }
+                                              },
+                                              [_vm._v("Amount")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: investment.amount,
+                                                  expression:
+                                                    "investment.amount"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "amount",
+                                                name: "amount",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: investment.amount
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    investment,
+                                                    "amount",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "currency" }
+                                              },
+                                              [_vm._v("Currency")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "select",
+                                              {
+                                                directives: [
+                                                  {
+                                                    name: "model",
+                                                    rawName: "v-model",
+                                                    value: _vm.form.currency,
+                                                    expression: "form.currency"
+                                                  }
+                                                ],
+                                                staticClass: "form-control",
+                                                attrs: { name: "currency" },
+                                                on: {
+                                                  change: function($event) {
+                                                    var $$selectedVal = Array.prototype.filter
+                                                      .call(
+                                                        $event.target.options,
+                                                        function(o) {
+                                                          return o.selected
+                                                        }
+                                                      )
+                                                      .map(function(o) {
+                                                        var val =
+                                                          "_value" in o
+                                                            ? o._value
+                                                            : o.value
+                                                        return val
+                                                      })
+                                                    _vm.$set(
+                                                      _vm.form,
+                                                      "currency",
+                                                      $event.target.multiple
+                                                        ? $$selectedVal
+                                                        : $$selectedVal[0]
+                                                    )
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c(
+                                                  "option",
+                                                  {
+                                                    attrs: {
+                                                      selected: "selected"
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        investment.currency
+                                                      )
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c("option", [
+                                                  _vm._v("UK Pound")
+                                                ]),
+                                                _vm._v(" "),
+                                                _c("option", [
+                                                  _vm._v("Saudi Riyal")
+                                                ]),
+                                                _vm._v(" "),
+                                                _c("option", [
+                                                  _vm._v("Canadian Sterling")
+                                                ])
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "shares" }
+                                              },
+                                              [_vm._v("Shares")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: investment.shares,
+                                                  expression:
+                                                    "investment.shares"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "shares",
+                                                name: "shares",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: investment.shares
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    investment,
+                                                    "shares",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "dlty" }
+                                              },
+                                              [_vm._v("Deal Type")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.dlty,
+                                                  expression: "form.dlty"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "dlty",
+                                                name: "dlty",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: _vm.form.dlty
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "dlty",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-row" }, [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "fuadcr" }
+                                              },
+                                              [_vm._v("Fund Admin Created")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.fuadcr,
+                                                  expression: "form.fuadcr"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "fuadcr",
+                                                name: "fuadcr",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: _vm.form.fuadcr
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "fuadcr",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "traini" }
+                                              },
+                                              [_vm._v("Transfer Initiated")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.traini,
+                                                  expression: "form.traini"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "traini",
+                                                name: "traini",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: _vm.form.traini
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "traini",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "tracre" }
+                                              },
+                                              [_vm._v("Transfer Created")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.tracre,
+                                                  expression: "form.tracre"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "tra-cre",
+                                                name: "tracre",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: _vm.form.tracre
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "tracre",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "form-group col-md-3"
+                                          },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                staticClass: "label-name",
+                                                attrs: { for: "bnkref" }
+                                              },
+                                              [_vm._v("Bank Refrence")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.form.bnkref,
+                                                  expression: "form.bnkref"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                id: "bnk-ref",
+                                                name: "bnkref",
+                                                required: ""
+                                              },
+                                              domProps: {
+                                                value: _vm.form.bnkref
+                                              },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.$set(
+                                                    _vm.form,
+                                                    "bnkref",
+                                                    $event.target.value
+                                                  )
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "label",
+                                          { attrs: { for: "Int-note" } },
+                                          [
+                                            _vm._v(
+                                              "Investment Note(Not Required)"
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("textarea", {
+                                          staticClass: "form-control",
+                                          attrs: { id: "Int-note", rows: "2" }
+                                        })
+                                      ])
+                                    ]
+                                  )
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "formModal-btn" }, [
+                                  _c(
+                                    "button",
+                                    { staticClass: "btn btn-primary" },
+                                    [_vm._v("Save")]
+                                  )
                                 ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "formModal-btn" }, [
-                                _c(
-                                  "button",
-                                  { staticClass: "btn btn-primary" },
-                                  [_vm._v("Save")]
-                                )
-                              ])
-                            ])
+                              ],
+                              2
+                            )
                           ])
                         ])
                       ]
@@ -39432,7 +39516,7 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm._m(2)
+        _vm._m(1)
       ])
     ])
   ])
@@ -39486,62 +39570,6 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row filter" }, [
-      _c("div", { staticClass: "col-md-2 filter-card" }, [
-        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-          _vm._v("View")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 filter-card" }, [
-        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-          _vm._v("View")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 filter-card" }, [
-        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-          _vm._v("View")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 filter-card" }, [
-        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-          _vm._v("View")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2 filter-card" }, [
-        _c("p", { staticClass: "filter-title" }, [_vm._v("Unscreened")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "filter deal" }, [_vm._v("113 Deals")]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-primary btn-sm" }, [
-          _vm._v("View")
-        ])
-      ])
-    ])
   },
   function() {
     var _vm = this
