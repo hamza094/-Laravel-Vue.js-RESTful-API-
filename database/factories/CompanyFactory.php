@@ -22,13 +22,12 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->unique()->company,
             'about' => $this->faker->sentence('40'),
-            'user_id'=>1,
-            'location'=>'Kentuky',
-            'type'=>'Busniess',
-            'rg_no'=>'421004',
-            'url'=>'https://mocah.org/thumbs/341907-Lancer-Rogue-Company-Video-Game.jpg'
+            'location'=>$this->faker->city,
+            'type'=>$this->faker->jobTitle,
+            'rg_no'=>$this->faker->randomNumber($nbDigits = NULL, $strict = false),
+            'url'=>'https://placeimg.com/640/480/tech'
         ];
     }
 }
