@@ -20,8 +20,6 @@ class CompanyTest extends TestCase
     /** @test */
     public function view_all_companies()
     {
-         $this->signIn(User::factory()->create());
-
         $company= Company::factory()->create();
 
         $response=$this->get('api/companies')

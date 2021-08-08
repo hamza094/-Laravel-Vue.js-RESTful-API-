@@ -19,8 +19,6 @@ class FilterTest extends TestCase
     /** @test */
     public function view_list_of_filters()
     {
-        $this->signIn(User::factory()->create());
-
         $filters = Filter::factory()->count(5)->create();
 
         foreach($filters as $filter){
@@ -30,7 +28,6 @@ class FilterTest extends TestCase
         }
         
         $response->assertStatus(200);
-        
         $this->assertEquals(5,$filters->count());
     }
 }

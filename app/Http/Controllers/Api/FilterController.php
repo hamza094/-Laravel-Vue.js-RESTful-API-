@@ -9,12 +9,6 @@ use App\Http\Resources\FilterResource;
 
 class FilterController extends Controller
 {
-
-	public function __construct()
-{
-    $this->middleware('auth');
-}
-
 	public function index(){
 		
      $filters=Filter::all();

@@ -1937,7 +1937,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -38516,11 +38515,9 @@ var render = function() {
                   "div",
                   {
                     staticClass: "col-md-2 filter-card",
-                    style: { "border-top": "3px solid  pink" }
+                    style: { "border-top": "4px solid  #20B2AA" }
                   },
                   [
-                    _c("div", [_vm._v("hy")]),
-                    _vm._v(" "),
                     _c("p", { staticClass: "filter-title" }, [
                       _vm._v(_vm._s(filter.name))
                     ]),

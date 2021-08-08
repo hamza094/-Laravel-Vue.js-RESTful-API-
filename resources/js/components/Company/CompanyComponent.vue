@@ -17,8 +17,7 @@
 
 <!-- Filters -->
 <div class="row filter">
-      <div class="col-md-2 filter-card" v-for="filter in filters" :style="{'border-top': '3px solid  pink'}">
-        <div>hy</div>
+      <div class="col-md-2 filter-card" v-for="filter in filters" :style="{'border-top': '4px solid  #20B2AA'}">
         <p class="filter-title">{{filter.name}}</p>
         <p class="filter deal">{{filter.deal_count}} Deals</p>
         <button class="btn btn-primary btn-sm">View</button>
