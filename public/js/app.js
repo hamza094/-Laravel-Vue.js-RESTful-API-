@@ -38509,7 +38509,7 @@ var render = function() {
           [
             _c(
               "div",
-              { staticClass: "row filter" },
+              { staticClass: "row" },
               _vm._l(_vm.filters, function(filter) {
                 return _c(
                   "div",

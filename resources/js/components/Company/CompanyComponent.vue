@@ -16,7 +16,7 @@
   <div class="tab-pane fade show active" id="deal" role="tabpanel" aria-labelledby="deal-tab">
 
 <!-- Filters -->
-<div class="row filter">
+<div class="row">
       <div class="col-md-2 filter-card" v-for="filter in filters" :style="{'border-top': '4px solid  #20B2AA'}">
         <p class="filter-title">{{filter.name}}</p>
         <p class="filter deal">{{filter.deal_count}} Deals</p>
