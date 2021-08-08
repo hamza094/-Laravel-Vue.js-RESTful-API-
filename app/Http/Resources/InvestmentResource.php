@@ -14,12 +14,12 @@ class InvestmentResource extends JsonResource
      */
     public function toArray($request)
     {
-         return [
-          'id'=>$this->id,
-          'currency'=>$this->currency,
-          'amount'=>$this->amount,
-          'shares'=>$this->shares,
-          'color'=>$this->color
+        return [
+            'id'=>$this->id,
+            'currency'=>$this->currency,
+            'amount'=>$this->amount,
+            'shares'=>$this->shares,
+            'color'=>$this->color,
         ];
     }
 }

@@ -3,22 +3,20 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Company;
 use App\Http\Resources\CompanyResource;
+use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    public function index(){
+    public function index()
+    {
+        $companies = Company::paginate(3);
 
-       $companies=Company::paginate(3);
-
-       return CompanyResource::collection($companies);
+        return CompanyResource::collection($companies);
     }
 
-    public function show(Company $company){
-
-      return new CompanyResource($company);
-       
+    public function show(Company $company)
+    {
+        return new CompanyResource($company);
     }
 }

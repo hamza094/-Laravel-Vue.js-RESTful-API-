@@ -1,11 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CompanyController;
 use App\Http\Controllers\Api\FilterController;
-
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiresource('/companies',CompanyController::class);
+Route::apiresource('/companies', CompanyController::class);
 
-Route::get('/filters',[FilterController::class,'index']);
+Route::get('/filters', [FilterController::class, 'index']);
 
-Route::fallback(function(){
+Route::fallback(function () {
     return response()->json([
-        'message' => 'Page you are looking for is not found might be wrong url. If error persists, contact hamza_pisces@live.com'], 404);
-}); 
-
+        'message' => 'Page you are looking for is not found might be wrong url. If error persists, contact hamza_pisces@live.com', ], 404);
+});
