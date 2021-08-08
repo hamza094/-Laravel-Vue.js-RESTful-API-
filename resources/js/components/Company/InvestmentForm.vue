@@ -2,8 +2,8 @@
 	<div>
 	      <h6>Investment#{{investment.id}}</h6>
         
-                                 <div class="form-row">
-                                       <div class="form-group col-md-3">
+                            <div class="form-row">
+                            <div class="form-group col-md-3">
                             <label for="amount" class="label-name">Amount</label>
                             <input type="text" id="amount" class="form-control" name="amount" v-model="investment.amount" required>
                             </div>
@@ -11,7 +11,7 @@
                             <div class="form-group col-md-3">
                             <label for="currency" class="label-name">Currency</label>
                             <select class="form-control" name="currency" v-model="form.currency">
-                              <option selected="selected">{{investment.currency}}</option>
+                              <option>{{investment.currency}}</option>
                               <option>UK Pound</option>
                               <option>Saudi Riyal</option>
                               <option>Canadian Sterling</option>
@@ -32,17 +32,17 @@
                             <div class="form-row">
                             <div class="form-group col-md-3">
                             <label for="fuadcr" class="label-name">Fund Admin Created</label>
-                            <input type="text" id="fuadcr" class="form-control" name="fuadcr" v-model="form.fuadcr" required>
+                            <input type="text" id="fuadcr" class="form-control" name="fuadcr" v-model="investment.fac" required>
                             </div>
 
                             <div class="form-group col-md-3">
                             <label for="traini" class="label-name">Transfer Initiated</label>
-                            <input type="text" id="traini" class="form-control" name="traini" v-model="form.traini" required>
+                            <input type="text" id="traini" class="form-control" name="traini" v-model="investment.ti" required>
                             </div>
 
                              <div class="form-group col-md-3">
                             <label for="tracre" class="label-name">Transfer Created</label>
-                            <input type="text" id="tra-cre" class="form-control" name="tracre" v-model="form.tracre" required>
+                            <input type="text" id="tra-cre" class="form-control" name="tracre" v-model="investment.tc" required>
                             </div>
 
                             <div class="form-group col-md-3">
@@ -52,7 +52,7 @@
                             </div>
                              <div class="form-group">
                            <label for="Int-note">Investment Note(Not Required)</label>
-                           <textarea class="form-control" id="Int-note" rows="2"></textarea>
+                           <textarea class="form-control" id="Int-note" rows="2">{{form.inote}}</textarea>
                           </div>
                       </div>
 
@@ -69,7 +69,11 @@ export default{
     return{
       form:{
          name:'',
-         rts:'Funded'
+         rts:'Funded',
+         inote:'',
+         dlty:'SAFE',
+         bnkref:''
+
       }
     };
     },

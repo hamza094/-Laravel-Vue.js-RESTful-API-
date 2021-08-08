@@ -24,8 +24,8 @@ class CompanyResource extends JsonResource
            'location'=>$this->location,
            'type'=>$this->type,
            'reg_no'=>$this->rg_no,
-           'about'=>Str::of($this->about)->limit(75),
-           'created_at'=>$this->created_at,
+           'about'=>Str::of($this->about)->limit(85),
+           'created_at'=>$this->created_at->toDateString(),
            'investments'=>InvestmentResource::collection($this->investments)
         ];
     }

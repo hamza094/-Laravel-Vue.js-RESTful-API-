@@ -26,7 +26,10 @@ class InvestmentFactory extends Factory
             'id'=>$this->faker->numberBetween($min = 10000, $max = 90000),
             'currency'=>$this->faker->currencyCode,
             'amount'=>$this->faker->numberBetween($min = 1000, $max = 9000),
-            'shares'=>$this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 60)
+            'shares'=>$this->faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 60),
+            'fac'=>$this->faker->dateTimeThisYear($max='now'),
+            'ti'=>$this->faker->dateTimeThisYear($max='now'),
+            'tc'=>$this->faker->dateTimeThisYear($max='now')
         ];
     }
 }

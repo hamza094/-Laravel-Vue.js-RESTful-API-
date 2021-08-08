@@ -2087,7 +2087,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         name: '',
-        rts: 'Funded'
+        rts: 'Funded',
+        cr: '',
+        juri: '',
+        cnote: ''
       }
     };
   }
@@ -2172,7 +2175,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       form: {
         name: '',
-        rts: 'Funded'
+        rts: 'Funded',
+        inote: '',
+        dlty: 'SAFE',
+        bnkref: ''
       }
     };
   }
@@ -38807,7 +38813,7 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "form-row" }, [
       _c("div", { staticClass: "form-group col-md-6" }, [
-        _c("label", { staticClass: "label-name", attrs: { for: "name" } }, [
+        _c("label", { staticClass: "label-name", attrs: { for: "legname" } }, [
           _vm._v("Company(Legal Name)")
         ]),
         _vm._v(" "),
@@ -38821,7 +38827,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { type: "text", id: "name", name: "name", required: "" },
+          attrs: { type: "text", id: "legname", name: "legname", required: "" },
           domProps: { value: _vm.company.legal },
           on: {
             input: function($event) {
@@ -38835,7 +38841,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group col-md-6" }, [
-        _c("label", { staticClass: "label-name", attrs: { for: "name" } }, [
+        _c("label", { staticClass: "label-name", attrs: { for: "frname" } }, [
           _vm._v("Company(Friendly Name)")
         ]),
         _vm._v(" "),
@@ -38849,7 +38855,7 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { type: "text", id: "name", name: "name", required: "" },
+          attrs: { type: "text", id: "frname", name: "frname", required: "" },
           domProps: { value: _vm.company.name },
           on: {
             input: function($event) {
@@ -38929,9 +38935,7 @@ var render = function() {
             }
           },
           [
-            _c("option", { attrs: { selected: "selected" } }, [
-              _vm._v("North Carolina (Us)")
-            ]),
+            _c("option", [_vm._v("North Carolina (Us)")]),
             _vm._v(" "),
             _c("option", [_vm._v("Washington (Us)")]),
             _vm._v(" "),
@@ -38979,9 +38983,7 @@ var render = function() {
             }
           },
           [
-            _c("option", { attrs: { selected: "selected" } }, [
-              _vm._v("US (US-Secatory of State Of)")
-            ]),
+            _c("option", [_vm._v("US (US-Secatory of State Of)")]),
             _vm._v(" "),
             _c("option", [_vm._v("Finland (Fin-Secatory of State Of)")]),
             _vm._v(" "),
@@ -39115,9 +39117,7 @@ var render = function() {
             }
           },
           [
-            _c("option", { attrs: { selected: "selected" } }, [
-              _vm._v("Portfolio")
-            ]),
+            _c("option", [_vm._v("Portfolio")]),
             _vm._v(" "),
             _c("option", [_vm._v("Website")]),
             _vm._v(" "),
@@ -39157,24 +39157,18 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0)
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "cnote" } }, [_vm._v("Add Note")]),
+      _vm._v(" "),
+      _c(
+        "textarea",
+        { staticClass: "form-control", attrs: { id: "cnote", rows: "4" } },
+        [_vm._v(_vm._s(_vm.form.note))]
+      )
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "note" } }, [_vm._v("Add Note")]),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control",
-        attrs: { id: "addnote", rows: "4" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -39266,9 +39260,7 @@ var render = function() {
             }
           },
           [
-            _c("option", { attrs: { selected: "selected" } }, [
-              _vm._v(_vm._s(_vm.investment.currency))
-            ]),
+            _c("option", [_vm._v(_vm._s(_vm.investment.currency))]),
             _vm._v(" "),
             _c("option", [_vm._v("UK Pound")]),
             _vm._v(" "),
@@ -39347,19 +39339,19 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.form.fuadcr,
-              expression: "form.fuadcr"
+              value: _vm.investment.fac,
+              expression: "investment.fac"
             }
           ],
           staticClass: "form-control",
           attrs: { type: "text", id: "fuadcr", name: "fuadcr", required: "" },
-          domProps: { value: _vm.form.fuadcr },
+          domProps: { value: _vm.investment.fac },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.form, "fuadcr", $event.target.value)
+              _vm.$set(_vm.investment, "fac", $event.target.value)
             }
           }
         })
@@ -39375,19 +39367,19 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.form.traini,
-              expression: "form.traini"
+              value: _vm.investment.ti,
+              expression: "investment.ti"
             }
           ],
           staticClass: "form-control",
           attrs: { type: "text", id: "traini", name: "traini", required: "" },
-          domProps: { value: _vm.form.traini },
+          domProps: { value: _vm.investment.ti },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.form, "traini", $event.target.value)
+              _vm.$set(_vm.investment, "ti", $event.target.value)
             }
           }
         })
@@ -39403,19 +39395,19 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.form.tracre,
-              expression: "form.tracre"
+              value: _vm.investment.tc,
+              expression: "investment.tc"
             }
           ],
           staticClass: "form-control",
           attrs: { type: "text", id: "tra-cre", name: "tracre", required: "" },
-          domProps: { value: _vm.form.tracre },
+          domProps: { value: _vm.investment.tc },
           on: {
             input: function($event) {
               if ($event.target.composing) {
                 return
               }
-              _vm.$set(_vm.form, "tracre", $event.target.value)
+              _vm.$set(_vm.investment, "tc", $event.target.value)
             }
           }
         })
@@ -39450,26 +39442,20 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
+    _c("div", { staticClass: "form-group" }, [
       _c("label", { attrs: { for: "Int-note" } }, [
         _vm._v("Investment Note(Not Required)")
       ]),
       _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control",
-        attrs: { id: "Int-note", rows: "2" }
-      })
+      _c(
+        "textarea",
+        { staticClass: "form-control", attrs: { id: "Int-note", rows: "2" } },
+        [_vm._v(_vm._s(_vm.form.inote))]
+      )
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -18,6 +18,9 @@ class CreateInvestmentsTable extends Migration
             $table->string('currency');
             $table->integer('amount');
             $table->float('shares');
+            $table->date('fac');
+            $table->date('ti');
+            $table->date('tc');
             $table->foreignId('company_id');
             $table->timestamps();
         });
