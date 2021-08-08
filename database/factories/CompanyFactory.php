@@ -26,8 +26,8 @@ class CompanyFactory extends Factory
             'about' => $this->faker->sentence('40'),
             'location'=>$this->faker->city,
             'type'=>$this->faker->jobTitle,
-            'rg_no'=>$this->faker->randomNumber($nbDigits = NULL, $strict = false),
-            'url'=>'https://placeimg.com/640/480/tech'
+            'rg_no'=>$this->faker->randomNumber($nbDigits = null, $strict = false),
+            'url'=>'https://placeimg.com/640/480/tech',
         ];
     }
 }

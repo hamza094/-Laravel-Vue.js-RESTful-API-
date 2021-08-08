@@ -15,10 +15,10 @@ class FilterResource extends JsonResource
     public function toArray($request)
     {
         return [
-          'id'=>$this->id,
-          'color'=>$this->color,
-           'name'=>$this->name,
-           'deal_count'=>$this->deal_count
+            'id'=>$this->id,
+            'color'=>$this->color,
+            'name'=>$this->name,
+            'deal_count'=>$this->deal_count,
         ];
     }
 }

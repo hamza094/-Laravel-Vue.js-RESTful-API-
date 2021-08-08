@@ -24,7 +24,7 @@ class FilterFactory extends Factory
         return [
             'name'=>$this->faker->unique()->word,
             'deal_count'=>$this->faker->unique()->numberBetween($min = 0, $max = 100),
-            'color'=>$this->faker->safeColorName 
+            'color'=>$this->faker->safeColorName,
         ];
     }
 }
