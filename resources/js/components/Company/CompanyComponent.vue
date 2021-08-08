@@ -16,6 +16,7 @@
   <div class="tab-pane fade show active" id="deal" role="tabpanel" aria-labelledby="deal-tab">
 
 <!-- Filters -->
+<div class="mb-2"><h5>Filters:</h5></div>
 <div class="row">
       <div class="col-md-2 filter-card" v-for="filter in filters" :style="{'border-top': '4px solid  #20B2AA'}">
         <p class="filter-title">{{filter.name}}</p>
@@ -36,7 +37,7 @@
         </div>
         <h5 class="card-title">{{company.name}}</h5>
     <p class="card-text">{{company.about}}</p>
-    <a href="" class="btn btn-primary btn-block">View Profile</a>
+    <button  class="btn btn-primary btn-block">View Profile</button>
   </div>
 </div>
 
@@ -65,7 +66,7 @@
 
                           </div>
                           <div class="formModal-btn">
-                          <button class="btn btn-primary">Save</button>
+                          <button @click.prevent="modalClose(company.id,company)" class="btn btn-primary">Save</button>
                           </div>
                 </form>
             </div>
@@ -130,7 +131,8 @@ export default{
       },
       modalClose(id,company){
         this.$modal.hide("companyModal"+id);
-      }      
+      },
+            
     },
     created(){
         this.loadCompanies();

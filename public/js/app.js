@@ -1937,6 +1937,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -38507,6 +38508,8 @@ var render = function() {
             }
           },
           [
+            _vm._m(1),
+            _vm._v(" "),
             _c(
               "div",
               { staticClass: "row" },
@@ -38578,11 +38581,8 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c(
-                          "a",
-                          {
-                            staticClass: "btn btn-primary btn-block",
-                            attrs: { href: "" }
-                          },
+                          "button",
+                          { staticClass: "btn btn-primary btn-block" },
                           [_vm._v("View Profile")]
                         )
                       ])
@@ -38677,7 +38677,18 @@ var render = function() {
                                 _c("div", { staticClass: "formModal-btn" }, [
                                   _c(
                                     "button",
-                                    { staticClass: "btn btn-primary" },
+                                    {
+                                      staticClass: "btn btn-primary",
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.modalClose(
+                                            company.id,
+                                            company
+                                          )
+                                        }
+                                      }
+                                    },
                                     [_vm._v("Save")]
                                   )
                                 ])
@@ -38708,7 +38719,7 @@ var render = function() {
           ]
         ),
         _vm._v(" "),
-        _vm._m(1)
+        _vm._m(2)
       ])
     ])
   ])
@@ -38762,6 +38773,12 @@ var staticRenderFns = [
         ])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-2" }, [_c("h5", [_vm._v("Filters:")])])
   },
   function() {
     var _vm = this

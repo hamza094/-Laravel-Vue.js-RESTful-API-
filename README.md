@@ -1,6 +1,6 @@
 # Coding Approach [![Build Status](https://app.travis-ci.com/hamza094/Coding-Approach.svg?branch=master)](https://app.travis-ci.com/hamza094/Coding-Approach)
 
-A Simple Laravel Vue.js Coding Aproach
+A Simple Laravel Vue.js Coding Approach
 
 # Installation
 
@@ -15,4 +15,7 @@ Then for seeding Data run
 
 - php artisan run db:seed
 
-Then regiter account and vist home page
+Then register an account and visit the home page
+
+For test run vendor/bin/phpunit in your bash terminal
+
