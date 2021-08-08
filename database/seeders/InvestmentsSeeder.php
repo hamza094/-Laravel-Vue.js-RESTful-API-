@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Investment;
-
 use Illuminate\Database\Seeder;
 
 class InvestmentsSeeder extends Seeder

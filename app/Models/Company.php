@@ -9,10 +9,10 @@ class Company extends Model
 {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
 
-    public function investments(){
-    	return $this->hasMany(Investment::class);
+    public function investments()
+    {
+        return $this->hasMany(Investment::class);
     }
-
 }
