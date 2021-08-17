@@ -1,7 +1,7 @@
-# Coding Approach [![Build Status](https://app.travis-ci.com/hamza094/Coding-Approach.svg?branch=master)](https://app.travis-ci.com/hamza094/Coding-Approach)
+#  Laravel Vue.js RESTful API [![Build Status](https://app.travis-ci.com/hamza094/Coding-Approach.svg?branch=master)](https://app.travis-ci.com/hamza094/Coding-Approach)
 
-A Simple Laravel Vue.js Coding Approach
-
+ Laravel Vue.js RESTful API with test-driven development
+ 
 # Installation
 
 Clone this repository to your machine.
